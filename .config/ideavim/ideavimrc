@@ -1,0 +1,129 @@
+set scrolloff=5
+let mapleader = " "
+
+" Search behaviour
+set incsearch
+set ignorecase
+set smartcase
+
+set number
+set relativenumber
+function! ToggleLineNumbers()
+  if &relativenumber == 1
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunction
+nnoremap <Leader>N :call ToggleLineNumbers()<CR>
+
+nnoremap Y y$
+
+" Remove bell
+set visualbell
+set noerrorbells
+
+" Switch ; and :
+nnoremap ; :
+vnoremap ; :
+nnoremap : ;
+vnoremap : ;
+
+" Move lines up and down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" Convenience movement mappings
+nnoremap J }
+nnoremap K {
+vnoremap J }
+vnoremap K {
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+nnoremap <S-l> gt
+nnoremap <S-h> gT
+
+" Windows
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>h :split<CR>
+nnoremap <leader>bd :bd<CR>
+nnoremap <leader>wo :action MoveEditorToOppositeTabGroup<CR>  " Switch tab editor group
+nnoremap <leader>wq :action CloseAllEditors<CR>
+nnoremap <leader>wm :action MaximizeEditorInSplit<CR>
+
+" Buffers
+nnoremap <leader>bl :action TabShiftActions.ShiftRight<CR>
+nnoremap <leader>bh :action TabShiftActions.ShiftLeft<CR>
+nnoremap <leader>bj :action TabShiftActions.ShiftDown<CR>
+nnoremap <leader>bk :action TabShiftActions.ShiftUp<CR>
+nnoremap <leader>bm :action CloseAllEditorsButActive<CR>
+
+" Search
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fa :action GotoAction<CR>
+nnoremap <leader>fc :action GotoClass<CR>
+nnoremap <leader>fr :action RecentFiles<CR>
+nnoremap <leader>F :action FindInPath<CR>
+
+" LSP
+nnoremap <leader>lr :action RenameElement<CR>
+nnoremap <leader>lu :action FindUsages<CR>
+nnoremap <leader>la :action ShowIntentionActions<CR>
+nnoremap <leader>lh :action ShowErrorDescription<CR>
+nnoremap <leader>lf :action ReformatCode<CR>
+
+" Debug
+" TODO: toggle breakpoints + step over/into/out, probably on Fn keys
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+
+" Tests
+nnoremap <leader>tr :action ContextRun<CR>  " Run test under cursor
+nnoremap <leader>td :action ContextDebug<CR>  " Debug test under cursor
+" Run test class
+nnoremap <leader>tc :action ContextRunClass<CR>
+
+
+" Show
+nnoremap <leader>sc :action EditorContextInfo<CR>
+
+" Movement
+map s <Action>(AceAction)
+
+" Plugins
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = "200"
+
+Plug 'tpope/vim-commentary'
+
+set surround
+nnoremap ciq ci\"  " TODO: not working
+nnoremap ciQ ci'
+
+set which-key
+let g:WhichKey_ShowVimActions = "true"  " Show default vim actions in which-key
+set notimeout
+
+set matchit
+
+set argtextobj
+let g:argtextobj_pairs="(:),{:},<:>,[:]"
+
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+set ReplaceWithRegister
+nmap S griw
+
+set NERDTree
+nnoremap <leader>e :NERDTreeFind<CR>
+nnoremap <leader>E :NERDTreeToggle<CR>
+
+set vim-paragraph-motion
