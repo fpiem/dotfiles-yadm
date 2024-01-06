@@ -1,0 +1,14 @@
+lastupdatecheck: 0
+recentrepos:
+- /Users/francescopiemontese/.config/nvim
+- /Users/francescopiemontese/devenv/dss1/dip
+- /Users/francescopiemontese/personal/dotfiles-yadm
+- /Users/francescopiemontese/devenv/dss4/dip
+- /Users/francescopiemontese/devenv/dss3/dip
+- /Users/francescopiemontese/devenv/dss-doc
+- /Users/francescopiemontese/.local/share/chezmoi
+startuppopupversion: 5
+customcommandshistory:
+- q
+hidecommandlog: false
+ignorewhitespaceindiffview: false

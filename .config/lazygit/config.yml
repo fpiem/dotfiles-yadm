@@ -1,0 +1,17 @@
+gui:
+  nerdFontsVersion: "3"
+  border: "rounded"
+  sidePanelWidth: 0.2
+  theme:
+    # selectedLineBgColor:
+    #   - underline
+    selectedRangeBgColor:
+      - underline
+
+git:
+  disableForcePushing: true
+  paging:
+    colorArg: never
+    useConfig: false
+    pager: delta --paging=never --syntax-theme=horizon --line-numbers
+
