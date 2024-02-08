@@ -30,11 +30,7 @@ fi
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
 
-# Set editor default keymap to emacs (`-e`) or vi (`-v`)
-bindkey -v
-export KEYTIMEOUT=1
-# export VI_MODE_SET_CURSOR=true
-bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides `visual-mode`)
+export KEYTIMEOUT=1  # reduce timeout in switching to vim mode
 
 # Remove path separator from WORDCHARS.
 WORDCHARS=${WORDCHARS//[\/]}
@@ -49,11 +45,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 # Set what highlighters will be used.
 # See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-# ZVM_INIT_MODE=sourcing
-# ZVM_KEYTIMEOUT=0.001
-# ZVM_ESCAPE_KEYTIMEOUT=0.001
-# ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
@@ -86,19 +77,14 @@ for key ('k') bindkey -M vicmd ${key} history-substring-search-up
 for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 
-# function zvm_before_init() {
-#   zvm_bindkey viins '^[[A' history-substring-search-up
-#   zvm_bindkey viins '^[[B' history-substring-search-down
-#   zvm_bindkey vicmd '^[[A' history-substring-search-up
-#   zvm_bindkey vicmd '^[[B' history-substring-search-down
-# }
-
 export XDG_CONFIG_HOME="${HOME}/.config"
 
 # Personal aliases
 alias lg="lazygit"
 alias ld="lazydocker"
 alias cl="clear"
+alias cb="cargo build"
+alias cr="cargo run"
 alias rr="ranger"
 alias da="direnv allow"
 alias gsw="git switch"
@@ -113,7 +99,6 @@ source ${HOME}/.dkurc
 # Finalize p10k to avoid error prompt when starting a new terminal.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
-
 
 # Direnv
 # export DIRENV_LOG_FORMAT=
