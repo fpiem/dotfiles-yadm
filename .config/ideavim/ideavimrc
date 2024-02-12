@@ -79,6 +79,7 @@ nnoremap <leader>lu :action FindUsages<CR>
 nnoremap <leader>la :action ShowIntentionActions<CR>
 nnoremap <leader>lh :action ShowErrorDescription<CR>
 nnoremap <leader>lf :action ReformatCode<CR>
+nnoremap gu :action ShowUsages<CR>
 
 " Debug
 " TODO: toggle breakpoints + step over/into/out, probably on Fn keys
