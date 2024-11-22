@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias arm="env /usr/bin/arch -arm64 /bin/zsh --login"
@@ -8,17 +8,15 @@ alias mbrew='arch -arm64 /opt/homebrew/bin/brew'
 bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides `visual-mode`)
 if [ "$(arch)" = "i386" ]
 then
-  echo "Using i386 architecture"
+  # echo "Using i386 architecture"
   eval "$(/usr/local/bin/brew shellenv)"
   export PYENV_ROOT="$HOME/.pyenv/x86"
 elif [ "$(arch)" = "arm64" ]
 then
-  echo "Using arm64 architecture"
+  # echo "Using arm64 architecture"
   eval "$(/opt/homebrew/bin/brew shellenv)"
   export PYENV_ROOT="$HOME/.pyenv/arm"
 fi
-
-eval "$(pyenv init -)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -89,9 +87,16 @@ alias rr="ranger"
 alias da="direnv allow"
 alias gsw="git switch"
 alias "gcp"="git cherry-pick"
+alias "gco"="git checkout"
 alias 'FUCK'='fuck --yeah'
-alias idea='open -a "IntelliJ IDEA.app"'
+alias idea='open -a "IntelliJ IDEA Ultimate.app"'
 alias lgy="lazygit -ucd ~/.local/share/yadm/lazygit -w ~ -g ~/.local/share/yadm/repo.git"
+alias spt="spotify_player"
+alias yz="yazi"
+alias gu="gitui"
+alias codei="code-insiders"
+alias pyenvinit='eval "$(pyenv init -)"'  # Silences the usual output of 'pyenv init' at least
+
 eval $(thefuck --alias)
 
 source ${HOME}/.dkurc
@@ -127,7 +132,7 @@ export HISTSIZE=1000000
 if [ -f '/Users/francescopiemontese/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/francescopiemontese/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/francescopiemontese/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/francescopiemontese/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/Users/francescopiemontese/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/francescopiemontese/google-cloud-sdk/completion.zsh.inc'; fi
 
 export CLOUDSDK_PYTHON="/Users/francescopiemontese/.pyenv/x86/shims/python3.8"
 
@@ -142,3 +147,9 @@ export PATH=$PATH:$GOPATH/bin
 
 fpath+=~/.zfunc
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+. "$HOME/.cargo/env"

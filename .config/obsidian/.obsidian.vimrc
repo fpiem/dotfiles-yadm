@@ -1,12 +1,13 @@
 " NOTE: this file should be copied to the root of each vault
 
-" nmap j gj
-" nmap k gk
+nmap j gj
+nmap k gk
 
-nmap : ;
-nmap ; :
-vmap : ;
-vmap ; :
+map ; :
+" nmap ; :
+" nmap : ;
+" vmap : ;
+" vmap ; :
 
 nmap J }
 nmap K {
@@ -28,18 +29,18 @@ exmap surround_square_brackets surround [ ]
 exmap surround_curly_brackets surround { }
 " NOTE: must use 'map' and not 'nmap'
 map [[ :surround_wiki
-nunmap s
-vunmap s
-map s" :surround_double_quotes
-map s' :surround_single_quotes
-map s` :surround_backticks
-map sb :surround_brackets
-map s( :surround_brackets
-map s) :surround_brackets
-map s[ :surround_square_brackets
-map s[ :surround_square_brackets
-map s{ :surround_curly_brackets
-map s} :surround_curly_brackets
+nunmap gs
+vunmap gs
+map gs" :surround_double_quotes
+map gs' :surround_single_quotes
+map gs` :surround_backticks
+map gsb :surround_brackets
+map gs( :surround_brackets
+map gs) :surround_brackets
+map gs[ :surround_square_brackets
+map gs[ :surround_square_brackets
+map gs{ :surround_curly_brackets
+map gs} :surround_curly_brackets
 
 " Emulate Folding https://vimhelp.org/fold.txt.html#fold-commands
 exmap togglefold obcommand editor:toggle-fold

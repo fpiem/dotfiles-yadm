@@ -1,14 +1,27 @@
 lastupdatecheck: 0
 recentrepos:
-- /Users/francescopiemontese/.config/nvim
-- /Users/francescopiemontese/devenv/dss1/dip
-- /Users/francescopiemontese/personal/dotfiles-yadm
-- /Users/francescopiemontese/devenv/dss4/dip
-- /Users/francescopiemontese/devenv/dss3/dip
-- /Users/francescopiemontese/devenv/dss-doc
-- /Users/francescopiemontese/.local/share/chezmoi
+    - /Users/francescopiemontese/devenv/dss2/dip
+    - /Users/francescopiemontese/devenv/dss2/deployer-dss-home/config
+    - /Users/francescopiemontese/devenv/dss2/dss-home/config/projects/PARTITIONINGWTF
+    - /Users/francescopiemontese/.config/nvim
+    - /Users/francescopiemontese/devenv/dss1/dip
+    - /Users/francescopiemontese/devenv/dss3/dip
+    - /Users/francescopiemontese/devenv/dss1/dss-home/config/projects/RUNNERINVESTIGATION2
+    - /Users/francescopiemontese/personal/borbinator
+    - /Users/francescopiemontese/devenv/dss1/dss-home/config/projects/RUNNERINVESTIGATION
+    - /Users/francescopiemontese/personal/dotfiles-yadm
+    - /Users/francescopiemontese/devenv/dss4/dip
+    - /Users/francescopiemontese/devenv/dss-doc
+    - /Users/francescopiemontese/.local/share/chezmoi
 startuppopupversion: 5
+lastversion: 0.43.1
 customcommandshistory:
-- q
+    - q
 hidecommandlog: false
 ignorewhitespaceindiffview: false
+diffcontextsize: 2
+renamesimilaritythreshold: 50
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always

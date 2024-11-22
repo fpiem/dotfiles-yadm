@@ -80,6 +80,7 @@ nnoremap <leader>la :action ShowIntentionActions<CR>
 nnoremap <leader>lh :action ShowErrorDescription<CR>
 nnoremap <leader>lf :action ReformatCode<CR>
 nnoremap gu :action ShowUsages<CR>
+nnoremap gi :action GotoImplementation<CR>
 
 " Debug
 " TODO: toggle breakpoints + step over/into/out, probably on Fn keys
@@ -90,7 +91,6 @@ nnoremap <leader>tr :action ContextRun<CR>  " Run test under cursor
 nnoremap <leader>td :action ContextDebug<CR>  " Debug test under cursor
 " Run test class
 nnoremap <leader>tc :action ContextRunClass<CR>
-
 
 " Show
 nnoremap <leader>sc :action EditorContextInfo<CR>

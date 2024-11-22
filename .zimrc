@@ -21,10 +21,10 @@ zmodule utility
 # Custom
 zmodule Tarrasch/zsh-bd --name bd
 # zmodule jeffreytse/zsh-vi-mode
-zmodule wting/autojump --source bin/autojump.zsh
-zmodule rupa/z
+# zmodule wting/autojump --source bin/autojump.zsh
+# zmodule rupa/z
 
-zmodule lukechilds/zsh-nvm
+# zmodule lukechilds/zsh-nvm
 
 # P10k prompt
 zmodule romkatv/powerlevel10k --use degit
